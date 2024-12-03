@@ -1,6 +1,6 @@
 package fr.epita.cards.datamodel;
 
-public class Card {
+public class Card implements Comparable<Card> {
     private int value;
     private String color;
 
@@ -31,5 +31,10 @@ public class Card {
                 "value=" + value +
                 ", color='" + color + '\'' +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Card o) {
+        return 0;
     }
 }
