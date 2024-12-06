@@ -20,15 +20,29 @@ public class CardDAO {
         } catch (SQLException e) {
             //TODO handle the exception
         }
+    }
 
+    public void update(Card newVersion, Card oldVersion) throws SQLException {
+
+        try (Connection connection = getConnection();) {
+            String updateSQL = "UPDATE CARDS SET val = ?, color=?  WHERE val = ?  and color = ?";
+            PreparedStatement updateStatement = connection.prepareStatement(updateSQL);
+            updateStatement.setInt(1, newVersion.getValue());
+            updateStatement.setString(2, newVersion.getColor());
+            updateStatement.setInt(3, oldVersion.getValue());
+            updateStatement.setString(4, oldVersion.getColor());
+            updateStatement.execute();
+        } catch (SQLException e) {
+            //TODO handle the exception
+        }
     }
 
     public void delete(Card card) throws SQLException {
 
         Connection connection = getConnection();
 
-        String deleteSQL = "DELETE FROM CARDS where value=? and color=? ";
-        PreparedStatement deleteStatement = getDeleteStatement(connection, deleteSQL);
+        String deleteSQL = "DELETE FROM CARDS where val=? and color=? ";
+        PreparedStatement deleteStatement = connection.prepareStatement(deleteSQL);
         deleteStatement.setInt(1, card.getValue());
         deleteStatement.setString(2, card.getColor());
         deleteStatement.execute();
@@ -42,8 +56,5 @@ public class CardDAO {
                 "pwd");
     }
 
-    private static PreparedStatement getDeleteStatement(Connection connection, String deleteSQL) throws SQLException {
-        return connection.prepareStatement(deleteSQL);
-    }
 
 }
