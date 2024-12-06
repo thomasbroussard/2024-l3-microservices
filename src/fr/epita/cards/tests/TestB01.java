@@ -15,6 +15,7 @@ public class TestB01 {
         PreparedStatement createStatement = connection.prepareStatement(createSQL);
         createStatement.execute();
 
+
         String insertSQL = "INSERT INTO CARDS(val, color) values (7, 'HEART') ";
         PreparedStatement insertStatement = connection.prepareStatement(insertSQL);
         insertStatement.execute();
