@@ -3,18 +3,18 @@ package fr.epita.cards;
 
 import fr.epita.cards.datamodel.Card;
 import fr.epita.cards.services.CardDAO;
+import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
 public class TestCardDAO {
 
-    public static void main(String[] args) throws SQLException {
-        testCardDAO_add();
 
-    }
 
+
+    @Test
     //Given a card, When I create that card using a dao, Then I should be able to retrieve it in the database
-    public static void testCardDAO_add() throws SQLException {
+    public void testCardDAO_add() throws SQLException {
         //given
         Card card = new Card(4, "SPADES");
         CardDAO dao = new CardDAO();
@@ -51,6 +51,11 @@ public class TestCardDAO {
                 "pwd");
     }
 
+
+    @Test
+    public void test(){
+        System.out.println("test method from junit");
+    }
 
 
 
