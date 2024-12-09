@@ -34,7 +34,6 @@ public class TestCardDAO {
             String color = resultSet.getString("color");
             Integer value = resultSet.getInt("val");
 
-
             assertThat(color).isEqualTo(card.getColor());
             assertThat(value).isEqualTo(card.getValue());
         }
