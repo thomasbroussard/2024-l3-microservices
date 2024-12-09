@@ -51,6 +51,10 @@ public class CardDAO {
     }
 
     private static Connection getConnection() throws SQLException {
+        // use the class "Properties" to load a key value pairs file (conf.properties)
+        // try to use the singleton pattern for a class named "Conf" as defined here: https://www.oodesign.com/singleton-pattern
+        // invoke that singleton to fill the appropriate info below.
+
         return DriverManager.getConnection("jdbc:h2:mem:test_mem",
                 "test",
                 "pwd");
