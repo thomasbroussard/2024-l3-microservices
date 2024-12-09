@@ -9,6 +9,7 @@ public class TestCardDAO {
 
     public static void main(String[] args) throws SQLException {
         testCardDAO_add();
+        
     }
 
     //Given a card, When I create that card using a dao, Then I should be able to retrieve it in the database

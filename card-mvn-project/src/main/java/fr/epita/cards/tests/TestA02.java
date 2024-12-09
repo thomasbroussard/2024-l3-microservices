@@ -3,14 +3,12 @@ package fr.epita.cards.tests;
 import fr.epita.cards.datamodel.Card;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
-public class TestA01 {
-
+public class TestA02 {
 
     public static void main(String[] args) {
-        /*
+         /*
         {7 of Hearts, 3 of Spades, 5 of Diamonds, 9 of Hearts, Jack (11) of
 Diamonds, King of Clubs(13), 6 of Clubs, Ace of Diamonds}
          */
@@ -31,9 +29,8 @@ Diamonds, King of Clubs(13), 6 of Clubs, Ace of Diamonds}
                 card7
         ));
 
+        cards.sort((o1, o2) -> o1.getValue() - o2.getValue());
+
         System.out.println(cards);
-
-
-
     }
 }
