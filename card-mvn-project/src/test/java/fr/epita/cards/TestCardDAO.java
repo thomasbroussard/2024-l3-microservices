@@ -3,14 +3,13 @@ package fr.epita.cards;
 
 import fr.epita.cards.datamodel.Card;
 import fr.epita.cards.services.CardDAO;
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestCardDAO {
-
-
 
 
     @Test
@@ -31,17 +30,13 @@ public class TestCardDAO {
 
         //then
         ResultSet resultSet = connection.prepareStatement("SELECT * FROM CARDS").executeQuery();
-        while (resultSet.next()){
+        while (resultSet.next()) {
             String color = resultSet.getString("color");
             Integer value = resultSet.getInt("val");
 
-            Assertions.
 
-            if (!color.equals(card.getColor()) || value != card.getValue()){
-                throw new IllegalStateException("assertion error, the values of the inserted card do not match");
-            }else {
-                System.out.println("success");
-            }
+            assertThat(color).isEqualTo(card.getColor());
+            assertThat(value).isEqualTo(card.getValue());
         }
 
 
@@ -57,10 +52,10 @@ public class TestCardDAO {
 
 
     @Test
-    public void test(){
+    public void test() {
         System.out.println("test method from junit");
+        Assertions.fail("not implemented yet");
     }
-
 
 
 }
