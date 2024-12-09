@@ -3,6 +3,7 @@ package fr.epita.cards;
 
 import fr.epita.cards.datamodel.Card;
 import fr.epita.cards.services.CardDAO;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.sql.*;
@@ -33,6 +34,9 @@ public class TestCardDAO {
         while (resultSet.next()){
             String color = resultSet.getString("color");
             Integer value = resultSet.getInt("val");
+
+            Assertions.
+
             if (!color.equals(card.getColor()) || value != card.getValue()){
                 throw new IllegalStateException("assertion error, the values of the inserted card do not match");
             }else {
