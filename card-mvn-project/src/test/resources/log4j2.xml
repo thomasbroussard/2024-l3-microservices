@@ -1,0 +1,16 @@
+<Configuration>
+    <Properties>
+        <Property name="filename" value="app.log"/>
+    </Properties>
+
+    <Appenders>
+        <Console name="CONSOLE">
+            <PatternLayout pattern="%d %m%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="CONSOLE" />
+        </Root>
+    </Loggers>
+</Configuration>
