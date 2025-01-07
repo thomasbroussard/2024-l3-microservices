@@ -15,7 +15,11 @@ public class Configuration {
     private Configuration(){
         this.properties = new Properties();
         try {
-            this.properties.load(new FileInputStream("conf.properties"));
+            String confLocation = System.getProperty("conf.location");
+            if (confLocation == null){
+                confLocation = "conf.properties";
+            }
+            this.properties.load(new FileInputStream(confLocation));
         } catch (IOException e) {
             //TODO deal with file not found, fallback?
             e.printStackTrace();

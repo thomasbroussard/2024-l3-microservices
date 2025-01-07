@@ -1,13 +1,18 @@
 package fr.epita.cards.services;
 
 import fr.epita.cards.datamodel.Card;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class CardDAO {
+
+    @Autowired
+    DataSource dataSource;
 
     public void add(Card card) throws SQLException {
 
@@ -50,18 +55,11 @@ public class CardDAO {
         connection.close();
     }
 
-    private static Connection getConnection() throws SQLException {
+    private Connection getConnection() throws SQLException {
         // use the class "Properties" to load a key value pairs file (conf.properties)
         // try to use the singleton pattern for a class named "Conf" as defined here: https://www.oodesign.com/singleton-pattern
         // invoke that singleton to fill the appropriate info below.
-
-        Configuration conf = Configuration.getInstance();
-        return DriverManager.getConnection(
-                conf.get("db.url"),
-                conf.get("db.user"),
-                conf.get("db.pwd")
-        );
+        return dataSource.getConnection();
     }
-
 
 }
