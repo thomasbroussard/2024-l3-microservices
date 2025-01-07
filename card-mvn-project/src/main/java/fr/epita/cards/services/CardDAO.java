@@ -55,9 +55,12 @@ public class CardDAO {
         // try to use the singleton pattern for a class named "Conf" as defined here: https://www.oodesign.com/singleton-pattern
         // invoke that singleton to fill the appropriate info below.
 
-        return DriverManager.getConnection("jdbc:h2:mem:test_mem",
-                "test",
-                "pwd");
+        Configuration conf = Configuration.getInstance();
+        return DriverManager.getConnection(
+                conf.get("db.url"),
+                conf.get("db.user"),
+                conf.get("db.pwd")
+        );
     }
 
 
