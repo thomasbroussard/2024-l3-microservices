@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class PlayerDAO {
@@ -46,8 +47,26 @@ public class PlayerDAO {
 
     }
 
-    public void get(String email){
-
+    public Player get(String email){
+        try (Connection connection = datasource.getConnection()) {
+            PreparedStatement getStatement = connection.prepareStatement("SELECT name, email from PLAYERS where email = ?");
+            getStatement.setString(1, email);
+            ResultSet resultSet = getStatement.executeQuery();
+            if (resultSet.isLast()){
+                //TODO check if it is empty in a better way
+                return null;
+            }
+            resultSet.next();
+            String foundEmail = resultSet.getString("email");
+            String foundName = resultSet.getString("name");
+            Player player = new Player();
+            player.setEmailAddress(foundEmail);
+            player.setName(foundName);
+            return player;
+        }catch (SQLException sqlException){
+            LOGGER.error(sqlException);
+        }
+        return null;
     }
 
 
