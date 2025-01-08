@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 
 @Configuration
 public class ApplicationConfiguration {
@@ -42,9 +43,8 @@ public class ApplicationConfiguration {
 
 
     @Bean
-    public PlayerDAO getPlayerDAO(){
-        //TODO
-        return null;
+    public PlayerDAO getPlayerDAO(DataSource ds){
+        return new PlayerDAO(ds);
     }
 
 }
