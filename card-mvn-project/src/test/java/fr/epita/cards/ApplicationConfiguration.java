@@ -22,4 +22,8 @@ public class ApplicationConfiguration {
         return dataSource;
     }
 
+    // TODO: return a bean of type "String" that contains your name
+
+
+
 }

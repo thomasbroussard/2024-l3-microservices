@@ -35,8 +35,10 @@ public class TestDependencyInjection {
         Assertions.assertThat(connection.getSchema()).isEqualTo("PUBLIC");
 
         LOGGER.info(connection.getSchema());
-
-
     }
+
+    //TODO do a new test method that logs in debug your user bean (previously injected)
+
+
 
 }
