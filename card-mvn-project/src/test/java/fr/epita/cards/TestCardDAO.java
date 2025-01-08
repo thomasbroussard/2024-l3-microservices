@@ -9,15 +9,28 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = ApplicationConfiguration.class)
 public class TestCardDAO {
 
     private static final Logger LOGGER = LogManager.getLogger(TestCardDAO.class);
     private Connection connection;
 
+    @Autowired
+    DataSource ds;
+
+    @Autowired
+    CardDAO dao;
 
     @BeforeEach
     public void setUp() throws SQLException {
@@ -29,7 +42,6 @@ public class TestCardDAO {
     public void testCardDAO_add() throws SQLException {
         //given
         Card card = new Card(4, "SPADES");
-        CardDAO dao = new CardDAO();
         String dropSQL = "DROP TABLE IF EXISTS CARDS";
         String createSQL = "CREATE TABLE CARDS(val int, color varchar)";
 

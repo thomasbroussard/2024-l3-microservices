@@ -1,6 +1,7 @@
 package fr.epita.cards;
 
 
+import fr.epita.cards.services.CardDAO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -22,7 +23,16 @@ public class ApplicationConfiguration {
         return dataSource;
     }
 
-    // TODO: return a bean of type "String" that contains your name
+    // returns a bean of type "String" that contains your name
+    @Bean
+    public String getName(){
+        return "Thomas";
+    }
+
+    @Bean
+    public CardDAO getCardDAO(DataSource ds){
+        return new CardDAO(ds);
+    }
 
 
 

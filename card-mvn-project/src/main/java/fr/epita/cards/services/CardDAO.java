@@ -11,8 +11,12 @@ import java.sql.SQLException;
 
 public class CardDAO {
 
-    @Autowired
+
     DataSource dataSource;
+
+    public CardDAO( @Autowired DataSource dataSource){
+        this.dataSource = dataSource;
+    }
 
     public void add(Card card) throws SQLException {
 

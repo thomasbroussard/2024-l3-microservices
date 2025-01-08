@@ -15,6 +15,8 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = ApplicationConfiguration.class)
 public class TestDependencyInjection {
@@ -24,6 +26,10 @@ public class TestDependencyInjection {
     @Autowired
     DataSource dataSource;
 
+    @Autowired
+    String theName;
+
+
 
     @Test
     public void test() throws SQLException {
@@ -31,13 +37,19 @@ public class TestDependencyInjection {
         Connection connection = dataSource.getConnection();
 
         //then
-        Assertions.assertThat(connection).isNotNull();
-        Assertions.assertThat(connection.getSchema()).isEqualTo("PUBLIC");
+        assertThat(connection).isNotNull();
+        assertThat(connection.getSchema()).isEqualTo("PUBLIC");
 
         LOGGER.info(connection.getSchema());
     }
 
-    //TODO do a new test method that logs in debug your user bean (previously injected)
+    @Test
+    public void testName(){
+        //method that logs in debug your user bean (previously injected)
+        assertThat(theName).isEqualTo("Thomas");
+        LOGGER.debug(theName);
+    }
+
 
 
 
