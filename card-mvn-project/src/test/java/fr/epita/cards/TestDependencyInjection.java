@@ -4,9 +4,11 @@ package fr.epita.cards;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.Assertions;
+import org.h2.jdbcx.JdbcDataSource;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -27,6 +29,7 @@ public class TestDependencyInjection {
     DataSource dataSource;
 
     @Autowired
+    @Qualifier("name")
     String theName;
 
 
@@ -36,6 +39,10 @@ public class TestDependencyInjection {
         //when
         Connection connection = dataSource.getConnection();
 
+        //just to demonstrate the concrete type check mechanism thanks to instanceof
+        if (dataSource instanceof JdbcDataSource){
+
+        }
         //then
         assertThat(connection).isNotNull();
         assertThat(connection.getSchema()).isEqualTo("PUBLIC");

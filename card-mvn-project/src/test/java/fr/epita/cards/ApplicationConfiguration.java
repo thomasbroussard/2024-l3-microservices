@@ -2,6 +2,7 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.services.CardDAO;
+import fr.epita.cards.services.PlayerDAO;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -24,9 +25,14 @@ public class ApplicationConfiguration {
     }
 
     // returns a bean of type "String" that contains your name
-    @Bean
+    @Bean("name")
     public String getName(){
         return "Thomas";
+    }
+
+    @Bean("address")
+    public String getAddress(){
+        return "Paris";
     }
 
     @Bean
@@ -35,5 +41,9 @@ public class ApplicationConfiguration {
     }
 
 
+    @Bean
+    public PlayerDAO getPlayerDAO(){
+        return null;
+    }
 
 }
