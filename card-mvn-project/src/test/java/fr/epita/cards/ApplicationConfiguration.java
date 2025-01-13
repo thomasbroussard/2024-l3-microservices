@@ -4,6 +4,7 @@ package fr.epita.cards;
 import fr.epita.cards.services.CardDAO;
 import fr.epita.cards.services.IPlayerDAO;
 import fr.epita.cards.services.PlayerJDBCDAO;
+import fr.epita.cards.services.PlayerJPADAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.PersistenceContext;
@@ -53,8 +54,14 @@ public class ApplicationConfiguration {
 
 
     @Bean
-    public IPlayerDAO getPlayerDAO(DataSource ds){
+    public PlayerJDBCDAO getJDBCPlayerDAO(DataSource ds){
         return new PlayerJDBCDAO(ds);
+    }
+
+
+    @Bean
+    public PlayerJPADAO getJPAPlayerDAO(DataSource ds){
+        return new PlayerJPADAO();
     }
 
     @Bean

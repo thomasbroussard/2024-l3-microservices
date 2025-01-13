@@ -120,3 +120,5 @@ v
 Fcard-mvn-project/src/main/java/fr/epita/cards/services/IPlayerDAO.java,e\b\eb6a2d5864627df3e12ef24f958cd85ee18e8f3a
 y
 Icard-mvn-project/src/main/java/fr/epita/cards/services/PlayerJDBCDAO.java,a\f\af8dab7fc6075480b396873760c5e86798337c99
+s
+Ccard-mvn-project/src/test/java/fr/epita/cards/TestPlayerJPADAO.java,b\a\babe9cbf9f700b0ff777d7091cd05848ce36b307
