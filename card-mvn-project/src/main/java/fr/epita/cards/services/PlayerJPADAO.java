@@ -19,10 +19,11 @@ public class PlayerJPADAO implements IPlayerDAO {
 
 
     private static final Logger LOGGER = LogManager.getLogger(PlayerJPADAO.class);
-    private final EntityManager em;
 
-    public PlayerJPADAO(EntityManager em) {
-        this.em = em;
+    @PersistenceContext
+    private EntityManager em;
+
+    public PlayerJPADAO() {
     }
 
     public void create(Player player) throws PlayerCreationException {

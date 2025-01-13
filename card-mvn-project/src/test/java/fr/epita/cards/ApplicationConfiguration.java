@@ -22,8 +22,7 @@ import java.util.Properties;
 public class ApplicationConfiguration {
 
 
-    @PersistenceContext
-    EntityManager em;
+
 
     @Bean
     public DataSource getDataSource(){

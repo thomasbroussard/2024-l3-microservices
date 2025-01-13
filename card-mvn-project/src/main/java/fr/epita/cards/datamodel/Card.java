@@ -1,6 +1,7 @@
 package fr.epita.cards.datamodel;
 
 public class Card implements Comparable<Card> {
+
     private int value;
     private String color;
 
