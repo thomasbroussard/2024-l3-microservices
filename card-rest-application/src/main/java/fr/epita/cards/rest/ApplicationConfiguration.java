@@ -1,4 +1,4 @@
-package fr.epita.cards;
+package fr.epita.cards.rest;
 
 
 import fr.epita.cards.services.data.impl.jdbc.CardDAO;
@@ -21,9 +21,6 @@ import java.util.Properties;
 @Configuration
 public class ApplicationConfiguration {
 
-
-
-
     @Bean
     public DataSource getDataSource(){
         fr.epita.cards.services.Configuration conf = fr.epita.cards.services.Configuration.getInstance();
@@ -33,28 +30,6 @@ public class ApplicationConfiguration {
                 conf.get("db.pwd")
         );
         return dataSource;
-    }
-
-    // returns a bean of type "String" that contains your name
-    @Bean("name")
-    public String getName(){
-        return "Thomas";
-    }
-
-    @Bean("address")
-    public String getAddress(){
-        return "Paris";
-    }
-
-    @Bean
-    public CardDAO getCardDAO(DataSource ds){
-        return new CardDAO(ds);
-    }
-
-
-    @Bean
-    public PlayerJDBCDAO getJDBCPlayerDAO(DataSource ds){
-        return new PlayerJDBCDAO(ds);
     }
 
 
