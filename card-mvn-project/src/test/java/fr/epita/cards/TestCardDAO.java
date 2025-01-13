@@ -2,10 +2,9 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.datamodel.Card;
-import fr.epita.cards.services.CardDAO;
+import fr.epita.cards.services.data.impl.jdbc.CardDAO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -2,8 +2,7 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.datamodel.Player;
-import fr.epita.cards.services.IPlayerDAO;
-import fr.epita.cards.services.PlayerJPADAO;
+import fr.epita.cards.services.data.impl.jpa.PlayerJPADAO;
 import fr.epita.cards.services.exceptions.PlayerCreationException;
 import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
@@ -15,8 +14,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @ExtendWith(SpringExtension.class)

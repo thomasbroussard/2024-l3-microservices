@@ -1,9 +1,23 @@
 package fr.epita.cards.datamodel;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "CARDS")
 public class Card implements Comparable<Card> {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    @Column(name = "VALUE")
     private int value;
+
+    @Column(name = "COLOR")
     private String color;
+
+    public Card() {
+    }
 
     public Card(int value, String color) {
         this.value = value;

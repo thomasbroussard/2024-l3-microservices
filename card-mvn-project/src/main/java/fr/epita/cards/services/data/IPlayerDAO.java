@@ -1,4 +1,4 @@
-package fr.epita.cards.services;
+package fr.epita.cards.services.data;
 
 import fr.epita.cards.datamodel.Player;
 import fr.epita.cards.services.exceptions.PlayerCreationException;

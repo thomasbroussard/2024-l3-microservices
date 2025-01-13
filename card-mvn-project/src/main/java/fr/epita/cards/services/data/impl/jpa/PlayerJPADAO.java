@@ -1,18 +1,13 @@
-package fr.epita.cards.services;
+package fr.epita.cards.services.data.impl.jpa;
 
 import fr.epita.cards.datamodel.Player;
+import fr.epita.cards.services.data.IPlayerDAO;
 import fr.epita.cards.services.exceptions.PlayerCreationException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class PlayerJPADAO implements IPlayerDAO {

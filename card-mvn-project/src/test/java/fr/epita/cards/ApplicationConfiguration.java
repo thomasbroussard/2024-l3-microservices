@@ -1,13 +1,10 @@
 package fr.epita.cards;
 
 
-import fr.epita.cards.services.CardDAO;
-import fr.epita.cards.services.IPlayerDAO;
-import fr.epita.cards.services.PlayerJDBCDAO;
-import fr.epita.cards.services.PlayerJPADAO;
-import jakarta.persistence.EntityManager;
+import fr.epita.cards.services.data.impl.jdbc.CardDAO;
+import fr.epita.cards.services.data.impl.jdbc.PlayerJDBCDAO;
+import fr.epita.cards.services.data.impl.jpa.PlayerJPADAO;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.PersistenceContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;

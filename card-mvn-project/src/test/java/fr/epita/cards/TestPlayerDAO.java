@@ -2,7 +2,7 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.datamodel.Player;
-import fr.epita.cards.services.IPlayerDAO;
+import fr.epita.cards.services.data.IPlayerDAO;
 import fr.epita.cards.services.exceptions.PlayerCreationException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;

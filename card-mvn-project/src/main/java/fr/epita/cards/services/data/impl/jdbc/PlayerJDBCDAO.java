@@ -1,6 +1,7 @@
-package fr.epita.cards.services;
+package fr.epita.cards.services.data.impl.jdbc;
 
 import fr.epita.cards.datamodel.Player;
+import fr.epita.cards.services.data.IPlayerDAO;
 import fr.epita.cards.services.exceptions.PlayerCreationException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

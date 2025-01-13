@@ -1,11 +1,10 @@
-package fr.epita.cards.services;
+package fr.epita.cards.services.data.impl.jdbc;
 
 import fr.epita.cards.datamodel.Card;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
