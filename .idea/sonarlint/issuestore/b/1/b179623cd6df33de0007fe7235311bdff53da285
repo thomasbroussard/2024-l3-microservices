@@ -1,0 +1,8 @@
+
+\
+java:S18546"ARemove this useless assignment to local variable "collectedList".(Äžú·þÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(Ë¸‡¸
+Q
+java:S16127";Replace this lambda with method reference 'Card::getColor'.(‹ºÖ•
+M
+java:S14816"2Remove this unused "collectedList" local variable.(Äžú·þÿÿÿÿ
