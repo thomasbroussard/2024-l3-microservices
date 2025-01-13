@@ -16,17 +16,20 @@ public class CardJPADAO {
     public CardJPADAO(){
     }
 
-    public void create(Card card) throws SQLException {
+    public void create(Card card)  {
         em.persist(card);
     }
 
-    public void update(Card newVersion) throws SQLException {
+    public void update(Card newVersion) {
         em.merge(newVersion);
     }
 
-    public void delete(Card card) throws SQLException {
+    public void delete(Card card)  {
         em.remove(card);
     }
 
 
+    public Card get(int id) {
+        return em.find(Card.class, id);
+    }
 }

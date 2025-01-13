@@ -6,11 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "CARDS")
 public class Card implements Comparable<Card> {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "VALUE")
+    @Column(name = "VAL")
     private int value;
 
     @Column(name = "COLOR")
@@ -38,6 +39,15 @@ public class Card implements Comparable<Card> {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     @Override

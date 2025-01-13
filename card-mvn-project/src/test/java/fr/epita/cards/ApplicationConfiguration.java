@@ -3,6 +3,7 @@ package fr.epita.cards;
 
 import fr.epita.cards.services.data.impl.jdbc.CardDAO;
 import fr.epita.cards.services.data.impl.jdbc.PlayerJDBCDAO;
+import fr.epita.cards.services.data.impl.jpa.CardJPADAO;
 import fr.epita.cards.services.data.impl.jpa.PlayerJPADAO;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
@@ -59,6 +60,11 @@ public class ApplicationConfiguration {
     @Bean
     public PlayerJPADAO getJPAPlayerDAO(DataSource ds){
         return new PlayerJPADAO();
+    }
+
+    @Bean
+    public CardJPADAO getCardJPADAO(){
+        return new CardJPADAO();
     }
 
     @Bean
