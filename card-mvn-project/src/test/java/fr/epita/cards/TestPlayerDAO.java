@@ -2,7 +2,7 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.datamodel.Player;
-import fr.epita.cards.services.PlayerDAO;
+import fr.epita.cards.services.IPlayerDAO;
 import fr.epita.cards.services.exceptions.PlayerCreationException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -26,7 +26,7 @@ public class TestPlayerDAO {
     DataSource dataSource;
 
     @Autowired
-    PlayerDAO dao;
+    IPlayerDAO dao;
 
     @Test
     @DisplayName(" whenCreatingAPlayerIShouldRetrieveItInDB")

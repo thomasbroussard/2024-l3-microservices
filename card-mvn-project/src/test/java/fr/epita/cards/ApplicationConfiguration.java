@@ -2,8 +2,11 @@ package fr.epita.cards;
 
 
 import fr.epita.cards.services.CardDAO;
-import fr.epita.cards.services.PlayerDAO;
+import fr.epita.cards.services.IPlayerDAO;
+import fr.epita.cards.services.PlayerJDBCDAO;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -18,6 +21,9 @@ import java.util.Properties;
 @Configuration
 public class ApplicationConfiguration {
 
+
+    @PersistenceContext
+    EntityManager em;
 
     @Bean
     public DataSource getDataSource(){
@@ -48,8 +54,8 @@ public class ApplicationConfiguration {
 
 
     @Bean
-    public PlayerDAO getPlayerDAO(DataSource ds){
-        return new PlayerDAO(ds);
+    public IPlayerDAO getPlayerDAO(DataSource ds){
+        return new PlayerJDBCDAO(ds);
     }
 
     @Bean

@@ -7,19 +7,19 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class PlayerDAO {
+public class PlayerJDBCDAO implements IPlayerDAO {
 
 
-    private static final Logger LOGGER = LogManager.getLogger(PlayerDAO.class);
+    private static final Logger LOGGER = LogManager.getLogger(PlayerJDBCDAO.class);
     private final DataSource datasource;
 
-    public PlayerDAO(@Autowired DataSource ds){
+    public PlayerJDBCDAO(@Autowired DataSource ds){
         this.datasource = ds;
     }
 
@@ -67,6 +67,11 @@ public class PlayerDAO {
             LOGGER.error(sqlException);
         }
         return null;
+    }
+
+    @Override
+    public List<Player> searchPlayers() {
+        return List.of();
     }
 
 
