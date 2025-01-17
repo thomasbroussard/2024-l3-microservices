@@ -1,4 +1,16 @@
 ### GET request to example server
-GET http://localhost:8080/cards
+GET http://localhost:8080/api/v1/cards
+
 
 ###
+POST localhost:8080/api/v1/cards
+Content-Type: application/json
+
+{"value": 2, "color":"spade"}
+
+
+
+
+
+
+

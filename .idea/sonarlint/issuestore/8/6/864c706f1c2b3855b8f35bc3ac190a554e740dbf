@@ -1,12 +1,10 @@
 
 p
-java:S2699L"-Add at least one assertion to this test case.(Ýü²ó8¢”Ú±Ä2J$95cad851-55f1-4acd-ae1a-82679c04db49
+java:S2699K"-Add at least one assertion to this test case.(Ýü²ó8¢”Ú±Ä2J$1fb610cd-b492-4f17-ad75-10fd39368326
 f
-java:S5786*"Remove this 'public' modifier.(ñî›÷úÿÿÿÿ8¢”Ú±Ä2J$d403f41d-29d8-4121-ad67-1ec6604b96e8
+java:S5786)"Remove this 'public' modifier.(ñî›÷úÿÿÿÿ8¢”Ú±Ä2J$d014260a-9338-483c-92b4-9f02fd244fee
 a
-java:S5786L"Remove this 'public' modifier.(Ýü²ó8¢”Ú±Ä2J$88987940-4ffb-405e-bc45-b48607bee545
+java:S5786K"Remove this 'public' modifier.(Ýü²ó8¢”Ú±Ä2J$5bd425f2-4b6c-4e5f-841e-4c6f809845a8
 a
-java:S5786"Remove this 'public' modifier.(š§§Ú8¢”Ú±Ä2J$d2d40a29-6b98-454f-b749-f70cfc30016a
-~	java:S125N"<This block of commented-out lines of code should be removed.(Ñ˜ã¡8¥”Ú±Ä2J$49abf72c-edf3-40a1-b025-417f800c235e
-
-java:S1128"<Remove this unused import 'org.assertj.core.api.Assertions'.(šàÏí8ÈÊã±Ä2J$a0f8d609-3040-4d80-88f4-00994af9b38f
+java:S5786"Remove this 'public' modifier.(š§§Ú8¢”Ú±Ä2J$1daf9368-d438-4f5e-a8a5-2bdeb8fe4ccc
+~	java:S125M"<This block of commented-out lines of code should be removed.(Ñ˜ã¡8¥”Ú±Ä2J$bee37044-6408-4b4a-ac5a-055ca165f20b
