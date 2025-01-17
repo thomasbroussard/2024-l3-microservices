@@ -75,11 +75,8 @@ public class ApplicationConfiguration {
 
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-
-
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(getDataSource());
-
 
         em.setPackagesToScan("fr.epita.cards.datamodel");
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
