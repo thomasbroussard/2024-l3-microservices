@@ -40,6 +40,7 @@ public class TestHibernate {
         //when
         em.persist(player);
 
+
         //then?
         ResultSet resultSet = dataSource.getConnection().prepareStatement("SELECT * from PLAYERS").executeQuery();
         int i = 0;
@@ -57,7 +58,7 @@ public class TestHibernate {
         //given
         Player player = new Player();
         player.setName("test");
-        player.setEmailAddress("test@test.com");
+        player.setEmailAddress("test@test1.com");
 
         //when
         em.persist(player);
